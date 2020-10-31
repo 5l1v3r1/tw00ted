@@ -8,6 +8,11 @@
         </div>
         <button v-on:click="followUser">Follow</button> <!-- Method followUser is bieng called on button press -->
     </div>
+    <div class="user-profile__tw00ts-wrapper">
+        <div class="user-profile__tw00t" v-for="tw00t in user.tw00ts" :key="tw00t.id">
+            {{ tw00t.content }}
+        </div>
+    </div>
 </div>
 </template>
 
@@ -23,8 +28,16 @@ export default {
                 firstname: 'Chirag',
                 lastname: 'Jariwala',
                 email: 'cjhackerz@1337.com',
-                isAdmin: true
-
+                isAdmin: true,
+                tw00ts: [{
+                        id: 1,
+                        content: 'The original twitter is cancer, welcome to amazing tw00ter'
+                    },
+                    {
+                        id: 2,
+                        content: "Don't forget to follow me back!"
+                    }
+                ]
             }
         }
     },
